@@ -1,4 +1,4 @@
-# @ebay/jquery-common-keydown
+# jquery-common-keydown
 
 <p>
     <a href="https://travis-ci.org/ianmcburnie/jquery-common-keydown"><img src="https://api.travis-ci.org/ianmcburnie/jquery-common-keydown.svg?branch=master" alt="Build Status" /></a>
@@ -22,7 +22,7 @@ Please use the tilde range specifier in your package.json to pin to a fixed majo
 ## Install
 
 ```js
-npm install @ebay/jquery-common-keydown
+npm install jquery-common-keydown
 ```
 
 ## Example

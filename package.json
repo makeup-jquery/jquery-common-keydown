@@ -1,5 +1,5 @@
 {
-  "name": "@ebay/jquery-common-keydown",
+  "name": "jquery-common-keydown",
   "description": "jQuery collection plugin that triggers events for common accessibility keys e.g. ENTER, SPACE, ESC, ARROW KEYS.",
   "version": "0.0.2",
   "scripts": {
