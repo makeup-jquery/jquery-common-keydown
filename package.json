@@ -2,7 +2,6 @@
   "name": "jquery-common-keydown",
   "description": "jQuery collection plugin that triggers events for common accessibility keys e.g. ENTER, SPACE, ESC, ARROW KEYS.",
   "version": "0.0.3",
-  "main": "jquery.commonkeydown.js",
   "scripts": {
     "start": "karma start --autoWatch true --singleRun false",
     "test": "karma start",
