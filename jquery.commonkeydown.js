@@ -1,7 +1,7 @@
 /**
 * @function $.fn.commonKeyDown
 * @name jquery-common-keydown
-* @version 0.0.2
+* @version 0.0.3
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @desc jQuery collection plugin that triggers events for common accessibility
 * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
