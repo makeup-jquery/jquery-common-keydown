@@ -1,17 +1,17 @@
 {
   "name": "jquery-common-keydown",
   "description": "jQuery collection plugin that triggers events for common accessibility keys e.g. ENTER, SPACE, ESC, ARROW KEYS.",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "scripts": {
-      "start": "karma start --autoWatch true --singleRun false",
-      "test": "karma start --autoWatch false --singleRun true",
-      "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
-      "build": "npm run jsdoc && npm run minify",
-      "clean": "rimraf jsdoc test_reports *.min.js lint.txt",
-      "fix": "eslint jquery.commonkeydown.js --fix",
-      "jsdoc": "jsdoc jquery.commonkeydown.js -d jsdoc",
-      "lint": "eslint jquery.commonkeydown.js > lint.txt",
-      "minify": "jsmin -o jquery.commonkeydown.min.js jquery.commonkeydown.js"
+    "start": "karma start --autoWatch true --singleRun false",
+    "test": "karma start --autoWatch false --singleRun true",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "build": "npm run jsdoc && npm run minify",
+    "clean": "rimraf jsdoc test_reports *.min.js lint.txt",
+    "fix": "eslint jquery.commonkeydown.js --fix",
+    "jsdoc": "jsdoc jquery.commonkeydown.js -d jsdoc",
+    "lint": "eslint jquery.commonkeydown.js > lint.txt",
+    "minify": "jsmin -o jquery.commonkeydown.min.js jquery.commonkeydown.js"
   },
   "pre-commit": "prepublish",
   "author": "Ian McBurnie <ianmcburnie@hotmail.com>",
