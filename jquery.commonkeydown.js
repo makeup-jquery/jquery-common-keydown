@@ -1,7 +1,7 @@
 /**
 * @file jQuery collection plugin that triggers events for common accessibility
 * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
-* @version 0.2.1
+* @version 0.2.2
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @requires jquery
 */
@@ -35,7 +35,7 @@
     * @return {jQuery} chainable jQuery class
     */
     $.fn.commonKeyDown = function commonKeyDown(selector) {
-        return this.each(function onEach(selector) {
+        return this.each(function onEach() {
             // check element does not already have this plugin
             if (!$.data(this, pluginName)) {
                 jQuery.data(this, pluginName, 'true');
