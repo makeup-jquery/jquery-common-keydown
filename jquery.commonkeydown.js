@@ -1,21 +1,9 @@
 /**
-* @function $.fn.commonKeyDown
-* @name jquery-common-keydown
-* @version 0.1.1
-* @author Ian McBurnie <ianmcburnie@hotmail.com>
-* @desc jQuery collection plugin that triggers events for common accessibility
+* @file jQuery collection plugin that triggers events for common accessibility
 * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
-* @fires {object} enterKeyDown
-* @fires {object} escapeKeyDown
-* @fires {object} spaceKeyDown
-* @fires {object} pageUpKeyDown
-* @fires {object} pageDownKeyDown
-* @fires {object} endKeyDown
-* @fires {object} homeKeyDown
-* @fires {object} leftArrowKeyDown
-* @fires {object} upArrowKeyDown
-* @fires {object} downArrowKeyDown
-* @fires {object} rightArrowKeyDown
+* @version 0.2.0
+* @author Ian McBurnie <ianmcburnie@hotmail.com>
+* @requires jquery
 */
 (function($, window, document, undefined) {
     var pluginName = 'jquery-common-keydown';
@@ -24,8 +12,30 @@
         return $.Event(type, {originalEvent: e});
     };
 
-    $.fn.commonKeyDown = function keyDown() {
-        return this.each(function onEach() {
+    /**
+    * jQuery collection plugin that triggers events for common accessibility
+    * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
+    *
+    * @method "jQuery.fn.commonKeyDown"
+    * @param {string} selector - when a selector is provided, the event handler
+    * is referred to as delegated. The handler is not called when the event
+    * occurs directly on the bound element, but only for descendants
+    * (inner elements) that match the selector.
+    * @fires {object} enterKeyDown
+    * @fires {object} escapeKeyDown
+    * @fires {object} spaceKeyDown
+    * @fires {object} pageUpKeyDown
+    * @fires {object} pageDownKeyDown
+    * @fires {object} endKeyDown
+    * @fires {object} homeKeyDown
+    * @fires {object} leftArrowKeyDown
+    * @fires {object} upArrowKeyDown
+    * @fires {object} downArrowKeyDown
+    * @fires {object} rightArrowKeyDown
+    * @return {jQuery} chainable jQuery class
+    */
+    $.fn.commonKeyDown = function commonKeyDown(selector) {
+        return this.each(function onEach(selector) {
             // check element does not already have this plugin
             if (!$.data(this, pluginName)) {
                 jQuery.data(this, pluginName, 'true');
@@ -85,7 +95,7 @@
                     }
                 };
 
-                $this.on('keydown', onKeyDown);
+                $this.on('keydown', selector, onKeyDown);
             }
         });
     };
