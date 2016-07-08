@@ -1,7 +1,7 @@
 /**
 * @file jQuery collection plugin that triggers events for common accessibility
 * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
-* @version 0.2.0
+* @version 0.2.1
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @requires jquery
 */

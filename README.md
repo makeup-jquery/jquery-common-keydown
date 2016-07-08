@@ -37,10 +37,14 @@ npm install jquery-common-keydown
 ## Example
 
 ```html
-<div tabindex="0" role="button">Fake Button</div>
+<div class="widget">
+    <div tabindex="0" role="button">Fake Button</div>
+    <div tabindex="0" role="button">Fake Button</div>
+</div>
 
-$('div[role=button]').commonKeyDown().on('spaceKeyDown enterKeyDown', function(e) {
-    // activate fake button
+$('.widget').commonKeyDown('[role=button]').on('spaceKeyDown enterKeyDown', function(e) {
+    // commonKeyDown events are delegated to widget
+    // access original DOM event with e.originalEvent
 });
 ```
 
