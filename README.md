@@ -7,7 +7,7 @@
     <a href="https://david-dm.org/ianmcburnie/jquery-common-keydown#info=devDependencies"><img src="https://david-dm.org/ianmcburnie/jquery-common-keydown/dev-status.svg" alt="devDependency status" /></a>
 </p>
 
-jQuery collection plugin that triggers events for common accessibility keys, e.g. enter, space, esc, arrows.
+jQuery collection plugin that adds observer for common accessibility keydown event, e.g. enter, space, esc, arrows.
 
 ```js
 $(collection).commonKeyDown();
@@ -21,34 +21,32 @@ Please use the tilde range specifier in your package.json to pin to a fixed majo
 
 ## Install
 
-<strike>
-```
-npm install @ebay/jquery-common-keydown
-```
-</strike>
-
 ```js
 npm install jquery-common-keydown
 ```
 
-**NOTE: The @ebay package scope is no longer supported. In order to receive latest NPM updates, please use the non-scoped version of this package.**
-
-
 ## Example
 
 ```html
-<div class="widget">
-    <div tabindex="0" role="button">Fake Button</div>
-    <div tabindex="0" role="button">Fake Button</div>
-</div>
-
-$('.widget').commonKeyDown('[role=button]').on('spaceKeyDown enterKeyDown', function(e) {
-    // commonKeyDown events are delegated to widget
-    // access original DOM event with e.originalEvent
-});
+<ul class="widget">
+    <li><button>Button 1</button></li>
+    <li><button>Button 2</button></li>
+    <li><button>Button 3</button></li>
+</ul>
 ```
 
-*NOTE:* this example is for demo purposes only. Never use a `div` tag for a button!
+```js
+// non-delegated event listener
+$('.widget').commonKeyDown().on('spaceKeyDown enterKeyDown', function(e) {
+    // this = ul
+    // e.target = button
+});
+// delegated event listener
+$('.widget').commonKeyDown().on('spaceKeyDown enterKeyDown', 'button', function(e) {
+    // this = button
+    // e.target = button
+});
+```
 
 ## Events
 

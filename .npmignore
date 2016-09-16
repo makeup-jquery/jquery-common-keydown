@@ -6,3 +6,4 @@ karma.conf.js
 lint.txt
 test.js
 test_reports
+jsdoc

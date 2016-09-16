@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Demo: jquery-common-keydown</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <div role="main">
+            <h1>Demo: jquery-common-keydown</h1>
+            <p>Move keyboard focus to buttons and press UP, DOWN, ESC etc. Open your developer console to see debug output.</p>
+            <p><strong>NOTE:</strong> pressing UP and DOWN is <strong>not</strong> expected to move the focus, it should just trigger an event.<p>
+
+            <h2>Delegated</h2>
+            <ul class="delegated">
+                <li><button>Item 1</button></li>
+                <li><button>Item 2</button></li>
+                <li><button>Item 3</button></li>
+            </ul>
+
+            <h2>Non-Delegated</h2>
+            <ul class="non-delegated">
+                <li><button>Item 1</button></li>
+                <li><button>Item 2</button></li>
+                <li><button>Item 3</button></li>
+            </ul>
+        </div>
+
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/jquery-migrate/dist/jquery-migrate.min.js"></script>
+        <script src="jquery.commonkeydown.js"></script>
+        <script>
+            var allEvents = 'enterKeyDown spaceKeyDown escapeKeyDown downArrowKeyDown upArrowKeyDown leftArrowKeyDown rightArrowKeyDown';
+
+            $(function() {
+
+                function handler(e) {
+                    console.log({
+                        type: e.type,
+                        event:e,
+                        this:this,
+                        target:e.target,
+                        originalTarget: e.originalEvent ? e.originalEvent.target : undefined,
+                        delegateTarget: e.delegateTarget
+                    });
+                }
+
+                $('ul.delegated').commonKeyDown().on(allEvents, 'button', handler);
+                $('ul.delegated').on('keydown', 'button', handler);
+                $('ul.delegated').on('click', 'button', handler);
+
+                $('ul.non-delegated').commonKeyDown().on(allEvents, handler);
+                $('ul.non-delegated').on('keydown', handler);
+                $('ul.non-delegated').on('click', handler);
+
+                Array.prototype.slice.call(document.querySelectorAll('ul')).forEach(function() {
+                    //this.addEventListener('click', handler);
+                });
+
+            });
+        </script>
+    </body>
+</html>

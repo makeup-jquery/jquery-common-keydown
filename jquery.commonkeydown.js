@@ -1,7 +1,7 @@
 /**
 * @file jQuery collection plugin that triggers events for common accessibility
 * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
-* @version 0.2.2
+* @version 0.3.0
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @requires jquery
 */
@@ -9,7 +9,7 @@
     var pluginName = 'jquery-common-keydown';
 
     var normalizeEvent = function(type, e) {
-        return $.Event(type, {originalEvent: e});
+        return $.Event(type, {originalEvent: e, target: e.target});
     };
 
     /**
@@ -17,10 +17,6 @@
     * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
     *
     * @method "jQuery.fn.commonKeyDown"
-    * @param {string} selector - when a selector is provided, the event handler
-    * is referred to as delegated. The handler is not called when the event
-    * occurs directly on the bound element, but only for descendants
-    * (inner elements) that match the selector.
     * @fires {object} enterKeyDown
     * @fires {object} escapeKeyDown
     * @fires {object} spaceKeyDown
@@ -34,10 +30,10 @@
     * @fires {object} rightArrowKeyDown
     * @return {jQuery} chainable jQuery class
     */
-    $.fn.commonKeyDown = function commonKeyDown(selector) {
+    $.fn.commonKeyDown = function commonKeyDown() {
         return this.each(function onEach() {
             // check element does not already have this plugin
-            if (!$.data(this, pluginName)) {
+            if ($.data(this, pluginName) === undefined) {
                 jQuery.data(this, pluginName, 'true');
 
                 var $this = $(this);
@@ -95,7 +91,9 @@
                     }
                 };
 
-                $this.on('keydown', selector, onKeyDown);
+                $this.on('keydown', onKeyDown);
+            } else {
+                console.log('warning: {pluginName} is already installed on {element}'.replace('{pluginName}', pluginName).replace('{element}', this));
             }
         });
     };
