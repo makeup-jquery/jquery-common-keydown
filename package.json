@@ -6,9 +6,10 @@
     "start": "karma start --autoWatch true --singleRun false",
     "test": "karma start --autoWatch false --singleRun true",
     "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
-    "build": "npm run jsdoc && npm run minify",
+    "build": "npm run jsdoc && npm run minify && npm run lasso",
     "clean": "rimraf jsdoc test_reports *.min.js lint.txt",
     "fix": "eslint jquery.commonkeydown.js --fix",
+    "lasso": "lasso browser.json --output-dir docs --minify",
     "jsdoc": "jsdoc jquery.commonkeydown.js -d jsdoc",
     "lint": "eslint jquery.commonkeydown.js > lint.txt",
     "minify": "jsmin -o jquery.commonkeydown.min.js jquery.commonkeydown.js"
