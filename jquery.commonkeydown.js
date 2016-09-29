@@ -1,9 +1,11 @@
 /**
 * @file jQuery collection plugin that triggers events for common accessibility
 * keys e.g. ENTER, SPACE, ESCAPE, ARROW KEYS on keydown
-* @version 0.3.0
+* @version 0.3.1
 * @author Ian McBurnie <ianmcburnie@hotmail.com>
 * @requires jquery
+* @param {Object} [options]
+* @param {string} [options.debug] - print debug output to console (default: false)
 */
 (function($, window, document, undefined) {
     var pluginName = 'jquery-common-keydown';
@@ -30,7 +32,11 @@
     * @fires {object} rightArrowKeyDown
     * @return {jQuery} chainable jQuery class
     */
-    $.fn.commonKeyDown = function commonKeyDown() {
+    $.fn.commonKeyDown = function commonKeyDown(options) {
+        options = $.extend({
+            debug: false
+        }, options);
+
         return this.each(function onEach() {
             // check element does not already have this plugin
             if ($.data(this, pluginName) === undefined) {
@@ -92,8 +98,8 @@
                 };
 
                 $this.on('keydown', onKeyDown);
-            } else {
-                console.log('warning: {pluginName} is already installed on {element}'.replace('{pluginName}', pluginName).replace('{element}', this));
+            } else if (options.debug === true) {
+                console.log('debug: {pluginName} is already installed on {element}'.replace('{pluginName}', pluginName).replace('{element}', this));
             }
         });
     };

@@ -17,8 +17,6 @@ $(collection).commonKeyDown();
 
 This plugin is still in an experimental state, until it reaches v1.0.0 you must consider all minor releases as breaking changes. Patch releases may introduce new features, but will be backwards compatible.
 
-Please use the tilde range specifier in your package.json to pin to a fixed major and minor version.
-
 ## Install
 
 ```js
@@ -28,7 +26,7 @@ npm install jquery-common-keydown
 ## Example
 
 ```html
-<ul class="widget">
+<ul>
     <li><button>Button 1</button></li>
     <li><button>Button 2</button></li>
     <li><button>Button 3</button></li>
@@ -37,12 +35,12 @@ npm install jquery-common-keydown
 
 ```js
 // non-delegated event listener
-$('.widget').commonKeyDown().on('spaceKeyDown enterKeyDown', function(e) {
+$('ul').commonKeyDown().on('spaceKeyDown enterKeyDown', function(e) {
     // this = ul
     // e.target = button
 });
 // delegated event listener
-$('.widget').commonKeyDown().on('spaceKeyDown enterKeyDown', 'button', function(e) {
+$('ul').commonKeyDown().on('spaceKeyDown enterKeyDown', 'button', function(e) {
     // this = button
     // e.target = button
 });
@@ -82,14 +80,14 @@ $.fn.commonKeyDown.keyCodes = {
 
 ## Development
 
-Run `npm start` for test driven development. All tests are located in `test.js`.
+Run `npm start` for browser based development or `npm run tdd` for test driven development. All tests are located in `test.js`.
 
 Execute `npm run` to view all available CLI scripts:
 
-* `npm start` test driven development: watches code and re-tests after any change
+* `npm start` launch local server and refreshes browser on any source file change
 * `npm test` runs tests & generates reports (see reports section below)
-* `npm run lint` lints code and reports to jshint.txt
-* `npm run minify` builds minified version of code
+* `npm run tdd` test driven development: watches code and re-tests after any change
+* `npm run lint` lints code and reports to lint.txt
 * `npm run build` cleans, lints, tests and minifies (called on `npm prepublish` hook)
 * `npm run clean` deletes all generated test reports and coverage files
 

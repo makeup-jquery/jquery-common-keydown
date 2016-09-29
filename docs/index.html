@@ -43,11 +43,11 @@
                     });
                 }
 
-                $('ul.delegated').commonKeyDown().on(allEvents, 'button', handler);
+                $('ul.delegated').commonKeyDown({debug: true}).on(allEvents, 'button', handler);
                 $('ul.delegated').on('keydown', 'button', handler);
                 $('ul.delegated').on('click', 'button', handler);
 
-                $('ul.non-delegated').commonKeyDown().on(allEvents, handler);
+                $('ul.non-delegated').commonKeyDown({debug: true}).on(allEvents, handler);
                 $('ul.non-delegated').on('keydown', handler);
                 $('ul.non-delegated').on('click', handler);
 
