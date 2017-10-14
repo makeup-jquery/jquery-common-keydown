@@ -11,7 +11,7 @@
     var pluginName = 'jquery-common-keydown';
 
     var normalizeEvent = function(type, e) {
-        return $.Event(type, {originalEvent: e, target: e.target});
+        return $.Event(type, { originalEvent: e, target: e.target }); // eslint-disable-line new-cap
     };
 
     /**
@@ -99,7 +99,9 @@
 
                 $this.on('keydown', onKeyDown);
             } else if (options.debug === true) {
-                console.log('debug: {pluginName} is already installed on {element}'.replace('{pluginName}', pluginName).replace('{element}', this));
+                console.log('debug: {pluginName} is already installed on {element}'
+                    .replace('{pluginName}', pluginName)
+                    .replace('{element}', this));
             }
         });
     };
