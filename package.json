@@ -1,7 +1,7 @@
 {
   "name": "jquery-common-keydown",
   "description": "jQuery collection plugin that triggers events for common accessibility keys e.g. ENTER, SPACE, ESC, ARROW KEYS.",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "scripts": {
     "start": "npm run lasso && parallelshell 'npm run server' 'npm run watch'",
     "tdd": "karma start --autoWatch true --singleRun false",
