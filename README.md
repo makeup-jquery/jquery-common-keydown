@@ -1,10 +1,10 @@
 # jquery-common-keydown
 
 <p>
-    <a href="https://travis-ci.org/ianmcburnie/jquery-common-keydown"><img src="https://api.travis-ci.org/ianmcburnie/jquery-common-keydown.svg?branch=master" alt="Build Status" /></a>
-    <a href='https://coveralls.io/github/ianmcburnie/jquery-common-keydown?branch=master'><img src='https://coveralls.io/repos/ianmcburnie/jquery-common-keydown/badge.svg?branch=master&service=github' alt='Coverage Status' /></a>
-    <a href="https://david-dm.org/ianmcburnie/jquery-common-keydown"><img src="https://david-dm.org/ianmcburnie/jquery-common-keydown.svg" alt="Dependency status" /></a>
-    <a href="https://david-dm.org/ianmcburnie/jquery-common-keydown#info=devDependencies"><img src="https://david-dm.org/ianmcburnie/jquery-common-keydown/dev-status.svg" alt="devDependency status" /></a>
+    <a href="https://travis-ci.org/makeup-jquery/jquery-common-keydown"><img src="https://api.travis-ci.org/makeup-jquery/jquery-common-keydown.svg?branch=master" alt="Build Status" /></a>
+    <a href='https://coveralls.io/github/makeup-jquery/jquery-common-keydown?branch=master'><img src='https://coveralls.io/repos/makeup-jquery/jquery-common-keydown/badge.svg?branch=master&service=github' alt='Coverage Status' /></a>
+    <a href="https://david-dm.org/makeup-jquery/jquery-common-keydown"><img src="https://david-dm.org/makeup-jquery/jquery-common-keydown.svg" alt="Dependency status" /></a>
+    <a href="https://david-dm.org/makeup-jquery/jquery-common-keydown#info=devDependencies"><img src="https://david-dm.org/makeup-jquery/jquery-common-keydown/dev-status.svg" alt="devDependency status" /></a>
 </p>
 
 jQuery collection plugin that adds observer for common accessibility keydown event, e.g. enter, space, esc, arrows.
@@ -97,8 +97,8 @@ Each test run will generate the following reports:
 
 ## CI Build
 
-https://travis-ci.org/ianmcburnie/jquery-keydown
+https://travis-ci.org/makeup-jquery/jquery-common-keydown
 
 ## Code Coverage
 
-https://coveralls.io/github/ianmcburnie/jquery-keydown?branch=master
+https://coveralls.io/github/makeup-jquery/jquery-common-keydown?branch=master

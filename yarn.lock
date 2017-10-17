@@ -1513,7 +1513,7 @@ escodegen@^1.6.0, escodegen@^1.8.1:
   optionalDependencies:
     source-map "~0.5.6"
 
-eslint-config-ebay@^0.1.5:
+eslint-config-ebay@~0.1:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/eslint-config-ebay/-/eslint-config-ebay-0.1.5.tgz#5103e2b5132e65d83d86dc10430359c230050848"
 
